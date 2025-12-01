@@ -4,7 +4,7 @@ const ValueProposition = () => {
   return (
     <section id="value-prop" className="value-root">    {/* FIXED */}
       <div className="container">
-        <h2 className="section-title">Why Leading Companies Choose Luminex</h2>
+        <h2 className="section-title">Why Leading Companies Choose Eleven11 IT Solution</h2>
         <p className="section-sub">
           Experience the difference that intelligent automation and real-time insights can make for your organization.
         </p>

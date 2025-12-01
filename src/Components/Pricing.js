@@ -33,7 +33,7 @@ function Pricing() {
         <div className="pricing-cta">
           <div>
             <h3>Ready to Transform Your Business?</h3>
-            <p>Join thousands of companies already using Luminex to drive growth and efficiency.</p>
+            <p>Join thousands of companies already using Eleven11 IT Solution to drive growth and efficiency.</p>
           </div>
           <div>
             <button className="btn-white">Start Free Trial</button>

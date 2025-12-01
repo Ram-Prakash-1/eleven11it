@@ -51,7 +51,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 Eleven11. All rights reserved.</p>
+        <p>© 2025 Eleven11 IT Solution. All rights reserved.</p>
         <div className="legal-links">
           <a>Privacy Policy</a>
           <a>Terms of Service</a>

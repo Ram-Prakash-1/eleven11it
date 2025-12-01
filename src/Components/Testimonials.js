@@ -2,7 +2,7 @@ import React from 'react'
 
 const Testimonials = () => {
   const items = [
-    {quote: 'Luminex transformed how we operate.', author: 'Sarah Chen', role:'VP of Operations', company:'TechCorp'},
+    {quote: 'Eleven11 IT Solution transformed how we operate.', author: 'Sarah Chen', role:'VP of Operations', company:'TechCorp'},
     {quote: 'The ROI was immediate.', author: 'Michael Rodriguez', role:'CTO', company:'DataFlow Inc'},
     {quote: 'Security exceeded expectations.', author: 'Emily Watson', role:'CISO', company:'SecureBank'}
   ];
