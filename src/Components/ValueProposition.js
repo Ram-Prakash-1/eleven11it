@@ -2,31 +2,46 @@ import React from 'react'
 
 const ValueProposition = () => {
   return (
-    <section id="value-prop" className="value-root">    {/* FIXED */}
+    <section id="value-prop" className="value-root">
       <div className="container">
-        <h2 className="section-title">Why Leading Companies Choose Eleven11 IT Solution</h2>
+        
+        <div className="kicker">Why Choose Us</div>
+
+        <h2 className="section-title">
+          Why Leading Companies Trust Eleven11 IT Solutions
+        </h2>
+
         <p className="section-sub">
-          Experience the difference that intelligent automation and real-time insights can make for your organization.
+          We combine intelligent automation, modern engineering, and deep technical expertise  
+          to deliver solutions that accelerate business growth and reduce operational complexity.
         </p>
 
         <div className="value-grid">
+
           <div className="value-card">
             <div className="value-icon">⚡</div>
-            <h3>Lightning Fast</h3>
-            <p>Process data in milliseconds with our optimized infrastructure.</p>
+            <h3>High-Speed Performance</h3>
+            <p>
+              Optimized systems built to handle heavy workloads with millisecond-level processing.
+            </p>
           </div>
 
           <div className="value-card">
             <div className="value-icon">🔒</div>
-            <h3>Enterprise Security</h3>
-            <p>Bank-grade encryption and compliance ready.</p>
+            <h3>Enterprise-Grade Security</h3>
+            <p>
+              End-to-end encryption, secure cloud architecture, and compliance-ready frameworks.
+            </p>
           </div>
 
           <div className="value-card">
-            <div className="value-icon">📈</div>
-            <h3>Proven Growth</h3>
-            <p>3x ROI within the first 6 months.</p>
+            <div className="value-icon">🚀</div>
+            <h3>Guaranteed Business Growth</h3>
+            <p>
+              Clients consistently achieve 3× efficiency and faster scaling within months.
+            </p>
           </div>
+
         </div>
       </div>
     </section>

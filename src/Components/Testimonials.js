@@ -1,38 +1,69 @@
-import React from 'react'
+import React from "react";
 
 const Testimonials = () => {
-  const items = [
-    {quote: 'Eleven11 IT Solution transformed how we operate.', author: 'Sarah Chen', role:'VP of Operations', company:'TechCorp'},
-    {quote: 'The ROI was immediate.', author: 'Michael Rodriguez', role:'CTO', company:'DataFlow Inc'},
-    {quote: 'Security exceeded expectations.', author: 'Emily Watson', role:'CISO', company:'SecureBank'}
+  const reviews = [
+    {
+      stars: "★★★★★",
+      quote: "Eleven11 helped us automate 70% of our manual tasks. Our team can now focus on growth instead of repetitive work.",
+      author: "Rahul Sharma",
+      role: "Founder, TechNova",
+      avatar: "R"
+    },
+    {
+      stars: "★★★★★",
+      quote: "The quality and delivery speed were impressive. Their UI/UX work improved our product engagement significantly.",
+      author: "Priya N",
+      role: "Product Manager, CloudBase",
+      avatar: "P"
+    },
+    {
+      stars: "★★★★★",
+      quote: "We scaled to 10k users without downtime. Their DevOps and API services are world-class.",
+      author: "Vignesh K",
+      role: "CTO, NeoStack",
+      avatar: "V"
+    }
   ];
 
   return (
-    <section id="testimonials" className="testimonials-root">   {/* FIXED */}
+    <section id="testimonials" className="testimonials-root">
       <div className="container">
         <div className="kicker">Testimonials</div>
-        <h2 className="section-title">Trusted by Industry Leaders</h2>
-        <p className="section-sub">See what our customers have to say.</p>
+        <h2 className="section-title">Trusted by Innovators</h2>
+        <p className="section-sub">
+          See how leading companies use Eleven11 to unlock growth and scale faster.
+        </p>
 
         <div className="test-grid">
-          {items.map((t, i) => (
-            <blockquote key={i} className="test-card">
-              <div className="stars">★★★★★</div>
-              <p className="quote">"{t.quote}"</p>
+          {reviews.map((r, i) => (
+            <div key={i} className="test-card">
+              <div className="stars">{r.stars}</div>
+              <p className="quote">{r.quote}</p>
 
               <div className="author">
-                <div className="avatar">{t.author.charAt(0)}</div>
-                <div>
-                  <div className="author-name">{t.author}</div>
-                  <div className="author-meta">{t.role} at {t.company}</div>
+                <div className="avatar">{r.avatar}</div>
+                <div className="author-info">
+                  <h4>{r.author}</h4>
+                  <p>{r.role}</p>
                 </div>
               </div>
-            </blockquote>
+            </div>
           ))}
         </div>
+
+        {/* <div className="logo-strip">
+          <h4>Loved by teams worldwide</h4>
+          <div className="logos">
+            <div className="logo-item">AWS</div>
+            <div className="logo-item">Google</div>
+            <div className="logo-item">Azure</div>
+            <div className="logo-item">Figma</div>
+            <div className="logo-item">Slack</div>
+          </div>
+        </div> */}
       </div>
     </section>
   );
-}
+};
 
 export default Testimonials;

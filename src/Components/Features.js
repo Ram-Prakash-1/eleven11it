@@ -2,20 +2,44 @@ import React from 'react'
 
 const Features = () => {
   const list = [
-    {icon:'📊', title:'Advanced Analytics', desc:'Transform raw data into actionable insights with our powerful analytics engine and customizable dashboards.'},
-    {icon:'💾', title:'Unified Data Platform', desc:'Connect all your data sources in one place. No more silos, just seamless integration across systems.'},
-    {icon:'⚙️', title:'Smart Automation', desc:'Automate repetitive tasks and workflows. Focus on strategy while we handle the execution.'},
-    {icon:'👥', title:'Team Collaboration', desc:'Real-time collaboration tools that keep your team aligned and productive, wherever they are.'},
-    {icon:'🔐', title:'Advanced Security', desc:'Multi-layer security architecture with end-to-end encryption and granular access controls.'},
-    {icon:'📱', title:'Mobile First', desc:'Full-featured mobile apps for iOS and Android. Manage your business on the go.'}
+    {
+      icon: '🤖',
+      title: 'AI-Powered Automation',
+      desc: 'Automate repetitive workflows with intelligent AI that learns, adapts, and boosts productivity across teams.'
+    },
+    {
+      icon: '📊',
+      title: 'Real-Time Analytics',
+      desc: 'Monitor KPIs, track performance, and make data-driven decisions with beautifully visualized dashboards.'
+    },
+    {
+      icon: '🔗',
+      title: 'Seamless Integrations',
+      desc: 'Connect your apps, databases, and third-party tools effortlessly — ensuring a smooth, unified ecosystem.'
+    },
+    {
+      icon: '🛡️',
+      title: 'Enterprise-Grade Security',
+      desc: 'Built with multi-layer encryption, secure authentication, and strict access control for complete protection.'
+    },
+    {
+      icon: '⚡',
+      title: 'High-Performance Infrastructure',
+      desc: 'Optimized for speed and reliability, delivering lightning-fast load times and 24/7 operational stability.'
+    },
+    {
+      icon: '📱',
+      title: 'Mobile-Friendly Experience',
+      desc: 'Manage, monitor, and collaborate from anywhere with a responsive mobile-first interface.'
+    }
   ];
 
   return (
     <section id="features" className="features-root">
       <div className="container">
         <div className="kicker">Features</div>
-        <h2 className="section-title">Everything You Need to Succeed</h2>
-        <p className="section-sub">Powerful features designed to streamline your operations and accelerate growth.</p>
+        <h2 className="section-title">Powerful Features Built for Modern Businesses</h2>
+        <p className="section-sub">From automation to security, every feature is designed to scale your workflow and drive long-term success.</p>
 
         <div className="features-grid">
           {list.map((f, i) => (
@@ -28,8 +52,11 @@ const Features = () => {
         </div>
 
         <div className="cta-band">
-          <h3>And Much More...</h3>
-          <p>API access, webhooks, custom integrations, white-label options, dedicated support, and enterprise features.</p>
+          <h3>And That’s Just the Beginning</h3>
+          <p>
+            Explore advanced APIs, custom integrations, automation suites, white-label services,
+            and enterprise-level support tailored for your business.
+          </p>
           <button className="btn-explore">Explore All Features</button>
         </div>
       </div>
@@ -37,4 +64,4 @@ const Features = () => {
   );
 }
 
-export default Features
+export default Features;

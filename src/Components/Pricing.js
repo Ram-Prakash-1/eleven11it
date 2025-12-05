@@ -1,48 +1,92 @@
-import React from 'react'
+import React from "react";
 
-function Pricing() {
+const Pricing = () => {
   const plans = [
-    {name:'Starter', price:'$49', desc:'Perfect for small teams getting started', features:['Up to 10 users','50GB storage','Basic analytics']},
-    {name:'Professional', price:'$149', desc:'For growing teams', features:['Up to 50 users','500GB storage','Advanced analytics'], popular:true},
-    {name:'Enterprise', price:'Custom', desc:'Tailored solutions', features:['Unlimited users','Dedicated support']}
+    {
+      name: "Starter",
+      price: "$9",
+      period: "/month",
+      features: [
+        "Basic AI Tools",
+        "Cloud Dashboard",
+        "Email Support",
+        "API Access (Limited)",
+      ],
+      btn: "Get Started"
+    },
+    {
+      name: "Pro",
+      price: "$29",
+      period: "/month",
+      features: [
+        "Full AI Automation",
+        "Advanced Dashboard",
+        "Priority Support",
+        "Unlimited API Access",
+        "Custom Integrations"
+      ],
+      btn: "Start Free Trial",
+      popular: true
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      features: [
+        "Dedicated Team",
+        "Fully Managed Cloud",
+        "Compliance & Security",
+        "On-Premise Option",
+        "24/7 Support"
+      ],
+      btn: "Talk to Sales"
+    },
   ];
 
   return (
     <section id="pricing" className="pricing-root">
       <div className="container">
+
         <div className="kicker">Pricing</div>
-        <h2 className="section-title">Simple, Transparent Pricing</h2>
-        <p className="section-sub">Choose the plan that fits your needs. All plans include a 14-day free trial.</p>
+        <h2 className="section-title">Choose the Perfect Plan</h2>
+        <p className="section-sub">
+          Clear, transparent pricing designed for startups to enterprises.
+        </p>
 
         <div className="pricing-grid">
-          {plans.map((p,i)=>(
-            <div key={i} className={`plan-card ${p.popular ? 'popular' : ''}`}>
+          {plans.map((p, i) => (
+            <div key={i} className={`plan-card ${p.popular ? "popular" : ""}`}>
+              
               {p.popular && <div className="popular-pill">Most Popular</div>}
-              <h3>{p.name}</h3>
-              <div className="price">{p.price === 'Custom' ? 'Custom' : (<><span className="price-amount">{p.price}</span><span className="price-suffix">/month</span></>)}</div>
-              <p className="plan-desc">{p.desc}</p>
-              <button className={`btn ${p.popular ? 'btn-white' : 'btn-primary'}`}>{p.popular ? 'Start Free Trial' : 'Start Free Trial'}</button>
+
+              <h3 className="plan-title">{p.name}</h3>
+
+              <div className="plan-price">
+                <span className="price">{p.price}</span>
+                <span className="period">{p.period}</span>
+              </div>
 
               <ul className="plan-features">
-                {p.features.map((f,fi)=>(<li key={fi}>{f}</li>))}
+                {p.features.map((f, index) => (
+                  <li key={index}>{f}</li>
+                ))}
               </ul>
+
+              <button className="btn-primary plan-btn">{p.btn}</button>
             </div>
           ))}
         </div>
 
+        {/* CTA BAND */}
         <div className="pricing-cta">
-          <div>
-            <h3>Ready to Transform Your Business?</h3>
-            <p>Join thousands of companies already using Eleven11 IT Solution to drive growth and efficiency.</p>
-          </div>
-          <div>
-            <button className="btn-white">Start Free Trial</button>
-            <button className="btn-ghost">Schedule Demo</button>
-          </div>
+          <h3>Want a custom solution?</h3>
+          <p>We build tailor-made automation systems for your industry.</p>
+          <button className="btn-white">Request Custom Quote</button>
         </div>
+
       </div>
     </section>
   );
-}
+};
 
-export default Pricing
+export default Pricing;

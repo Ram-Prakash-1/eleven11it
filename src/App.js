@@ -17,7 +17,7 @@ return (
 <Features />
 <Industries />
 <Testimonials />
-<Pricing />
+{/* <Pricing /> */}
 <Footer />
 </div>
 );
