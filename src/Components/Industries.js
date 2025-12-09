@@ -1,6 +1,16 @@
 import React from 'react'
 
 const Industries = () => {
+  const WHATSAPP_NUMBER = "918807252105"; // <- your number here
+
+  function openWhatsApp() {
+    const message =
+      "I have a unique business requirement and would like a customized solution. Can we schedule a consultation?";
+    
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
   const items = [
     {
       icon: '🌐',
@@ -48,10 +58,14 @@ const Industries = () => {
   return (
     <section id="industries" className="industries-root">
       <div className="container">
+        
         <div className="kicker">Industries</div>
         <h2 className="section-title">Built for Every Industry</h2>
-        <p className="section-sub">We design every service to remove complexity and elevate your workflow.
-Scale effortlessly with seamless tools, automation, and modern engineering.</p>
+
+        <p className="section-sub">
+          We design every service to remove complexity and elevate your workflow.
+          Scale effortlessly with seamless tools, automation, and modern engineering.
+        </p>
 
         <div className="industries-grid">
           {items.map((it, i) => (
@@ -66,8 +80,11 @@ Scale effortlessly with seamless tools, automation, and modern engineering.</p>
 
         <div className="industries-cta">
           <p>Need something unique? We customize solutions for all business types.</p>
-          <button className="btn-primary">Schedule a Consultation</button>
+          <button className="btn-primary" onClick={openWhatsApp}>
+            Schedule a Consultation
+          </button>
         </div>
+
       </div>
     </section>
   );
