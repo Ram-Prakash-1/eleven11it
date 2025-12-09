@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import eleven11_with_background from "../Images/Eleven11_background.png";
 
-const WEBSITE_EMAIL = "eleven11.itsolution@gmail.com";
+// ---- PUT YOUR REAL IDs HERE ----
+const SERVICE_ID = "service_Eleven11x121";     // 👈 EmailJS service ID
+const TEMPLATE_ID = "template_xjt12pp";   // 👈 EmailJS template ID
+const PUBLIC_KEY  = "x4-V2ySYW75uaDd4N";  // 👈 EmailJS public key
+// --------------------------------
 
 const Footer = () => {
   const [form, setForm] = useState({
@@ -23,82 +28,78 @@ const Footer = () => {
       return;
     }
 
-    const subject = "New Inquiry from Eleven11 Website";
-    const body = `
-Name: ${form.name}
-Email: ${form.email}
-Phone: ${form.phone}
+    const templateParams = {
+      name: form.name || "New visitor", // name empty na fallback
+      email: form.email,
+      phone: form.phone || "Not provided",
+      message: form.message,
+      time: new Date().toLocaleString(),
+    };
 
-Message:
-${form.message}
-`.replace(/\n/g, "%0D%0A");
-
-    // Always open Gmail website compose
-    const gmailWebURL = 
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${WEBSITE_EMAIL}` +
-      `&su=${encodeURIComponent(subject)}&body=${body}`;
-
-    window.open(gmailWebURL, "_blank");
-
-    setForm({ name: "", email: "", phone: "", message: "" });
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then((res) => {
+        console.log("EMAILJS SUCCESS:", res);
+        alert("Message sent successfully 🎉");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      })
+      .catch((err) => {
+        console.error("EMAILJS ERROR:", err);   // 👈 console la full error
+        alert("Something went wrong 😢 Please check console & try again.");
+      });
   }
 
   return (
     <footer id="footer" className="footer-root">
       <div className="container footer-grid">
-
         {/* Brand */}
         <div className="footer-brand">
           <div className="brand-logo-square">
-            <img src={eleven11_with_background} alt="Eleven11 Logo"/>
+            <img src={eleven11_with_background} alt="Eleven11 Logo" />
           </div>
 
           <h4>Eleven11 IT Solutions</h4>
           <p>
-            Modern digital services for growing businesses.  
+            Modern digital services for growing businesses.
             Build, scale, and automate with confidence.
           </p>
 
           <div className="socials">
-
-  <a
-    href="https://www.linkedin.com/"
-    className="social"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    LinkedIn
-  </a>
-
-  <a
-    href="https://github.com/"
-    className="social"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub
-  </a>
-
-  <a
-    href="https://youtube.com/"
-    className="social"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    YouTube
-  </a>
-
-  <a
-    href="https://instagram.com/"
-    className="social"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Instagram
-  </a>
-
-</div>
-
+            <a
+              href="https://www.linkedin.com/"
+              className="social"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/"
+              className="social"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://youtube.com/"
+              className="social"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://instagram.com/"
+              className="social"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+          </div>
         </div>
 
         {/* Product */}
@@ -106,7 +107,7 @@ ${form.message}
           <h5>Product</h5>
           <ul>
             <li>Features</li>
-            <li>Integrations</li>
+            <li>Projects</li>
           </ul>
         </div>
 
@@ -116,7 +117,7 @@ ${form.message}
           <ul>
             <li>About Us</li>
             <li>Careers</li>
-            <li>Projects</li>
+            <li>Portfolio</li>
           </ul>
         </div>
 
@@ -128,20 +129,18 @@ ${form.message}
             <input
               name="name"
               type="text"
-              placeholder="Your Name (optional)"
+              placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
             />
-
             <input
               name="email"
               type="email"
-              placeholder="Your Email *"
+              placeholder="Your Email"
               value={form.email}
               onChange={handleChange}
               required
             />
-
             <input
               name="phone"
               type="tel"
@@ -149,7 +148,6 @@ ${form.message}
               value={form.phone}
               onChange={handleChange}
             />
-
             <textarea
               name="message"
               placeholder="Your Message..."
@@ -158,12 +156,10 @@ ${form.message}
               rows={4}
               required
             />
-
             <button type="submit" className="btn-primary">
               Send Message
             </button>
           </form>
-
         </div>
       </div>
 

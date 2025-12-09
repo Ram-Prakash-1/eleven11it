@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import eleven11_logo from "../Images/Eleven11.png";
+import eleven11_with_background from "../Images/Eleven11_background.png";
+import eleven11_video from "../Videos/Eleven11video.mp4"
+
 
 const Hero = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,7 +46,7 @@ const Hero = () => {
           {/* LOGO */}
           <div className="brand">
             <div className="brand-logo">
-              <img src={eleven11_logo} alt="Eleven11 Logo" />
+              <img src={eleven11_with_background} alt="Eleven11 Logo" />
             </div>
             <div className="brand-name">Eleven11</div>
           </div>
@@ -62,7 +65,7 @@ const Hero = () => {
             <li><a href="#home">Home</a></li>
             <li><a href="#value-prop">Services</a></li>
             <li><a href="#features">Why Us</a></li>
-            <li><a href="#industries">Work</a></li>
+            <li><a href="#industries">Made By Us</a></li>
             {/* <li><a href="#pricing">Pricing</a></li> */}
             <li><a href="#footer">Contact</a></li>
             {/* <li><button className="btn-primary">Book a Call</button></li> */}
@@ -91,19 +94,20 @@ const Hero = () => {
 
           <div className="hero-actions">
             <button className="btn-primary large">Schedule a Call →</button>
-            <button className="btn-ghost large">View Portfolio</button>
+            <button className="btn-primary large">View Portfolio →</button>
+            {/* <button className="btn-ghost large">View Portfolio →</button> */}
           </div>
 
           <div className="metrics">
             <div className="metric">
-              <div className="metric-value">120+</div>
+              <div className="metric-value">12+</div>
               <div className="metric-label">Products Launched</div>
             </div>
             <div className="divider" />
-            <div className="metric">
+            {/* <div className="metric">
               <div className="metric-value">4.9/5</div>
               <div className="metric-label">Founder Rating</div>
-            </div>
+            </div> */}
             <div className="divider" />
             <div className="metric">
               <div className="metric-value">98%</div>
@@ -113,42 +117,40 @@ const Hero = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="hero-right">
+<div className="hero-right">
 
-          <div className="card-shadow" />
+  <div className="card-shadow" />
 
-          <div className="revenue-card">
-            <div className="rev-header">
-              <div>
-                <div className="rev-small">Monthly Revenue</div>
-                <div className="rev-big">$847,382</div>
-              </div>
-              <div className="rev-badge">+23.5%</div>
-            </div>
+  <div className="revenue-card video-card">
 
-            <div className="bar-chart">
-              {[40, 70, 48, 82, 58, 92, 75, 99].map((h, i) => (
-                <div key={i} className="bar" style={{ height: `${h}%` }} />
-              ))}
-            </div>
+    <video
+      className="hero-video"
+      src={eleven11_video}
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
 
-            <div className="rev-stats">
-              <div>
-                <div className="stat-label">Conversions</div>
-                <div className="stat-value">12,483</div>
-              </div>
-              <div>
-                <div className="stat-label">Engagement</div>
-                <div className="stat-value">87.3%</div>
-              </div>
-              <div>
-                <div className="stat-label">Growth</div>
-                <div className="stat-value">2.4×</div>
-              </div>
-            </div>
-          </div>
+    <div className="rev-stats">
+      <div>
+        <div className="stat-label">Conversions</div>
+        <div className="stat-value">783</div>
+      </div>
+      <div>
+        <div className="stat-label">Engagement</div>
+        <div className="stat-value">87.3%</div>
+      </div>
+      <div>
+        <div className="stat-label">Growth</div>
+        <div className="stat-value">2.4×</div>
+      </div>
+    </div>
 
-        </div>
+  </div>
+
+</div>
+
       </div>
 
     </header>

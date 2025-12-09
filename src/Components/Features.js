@@ -3,9 +3,9 @@ import React from 'react'
 const Features = () => {
   const list = [
     {
-      icon: '🤖',
-      title: 'AI-Powered Automation',
-      desc: 'Automate repetitive workflows with intelligent AI that learns, adapts, and boosts productivity across teams.'
+      icon: '📝',
+      title: 'Data Annotation Services',
+      desc: 'Accurately label images and create high-quality datasets using scalable human-in-the-loop workflows.'
     },
     {
       icon: '📊',
@@ -13,14 +13,9 @@ const Features = () => {
       desc: 'Monitor KPIs, track performance, and make data-driven decisions with beautifully visualized dashboards.'
     },
     {
-      icon: '🔗',
-      title: 'Seamless Integrations',
-      desc: 'Connect your apps, databases, and third-party tools effortlessly — ensuring a smooth, unified ecosystem.'
-    },
-    {
-      icon: '🛡️',
-      title: 'Enterprise-Grade Security',
-      desc: 'Built with multi-layer encryption, secure authentication, and strict access control for complete protection.'
+      icon: '💻',
+      title: 'Web Development & Engineering',
+      desc: 'Build high-performance websites, dashboards, and applications with clean architecture and secure backend systems.'
     },
     {
       icon: '⚡',
@@ -31,6 +26,11 @@ const Features = () => {
       icon: '📱',
       title: 'Mobile-Friendly Experience',
       desc: 'Manage, monitor, and collaborate from anywhere with a responsive mobile-first interface.'
+    },
+    {
+      icon: '🔗',
+      title: 'Seamless Integrations',
+      desc: 'Connect your apps, databases, and third-party tools effortlessly — ensuring a smooth, unified ecosystem.'
     }
   ];
 
@@ -39,7 +39,9 @@ const Features = () => {
       <div className="container">
         <div className="kicker">Features</div>
         <h2 className="section-title">Powerful Features Built for Modern Businesses</h2>
-        <p className="section-sub">From automation to security, every feature is designed to scale your workflow and drive long-term success.</p>
+        <p className="section-sub">Our platform is built to automate workflows, reduce manual effort, and unlock measurable productivity.  
+Scale faster with clean architecture, intelligent tools, and seamless integrations.
+</p>
 
         <div className="features-grid">
           {list.map((f, i) => (

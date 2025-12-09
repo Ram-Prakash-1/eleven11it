@@ -13,14 +13,14 @@ const Industries = () => {
       icon: '📝',
       title: 'Data Annotation',
       desc: 'High-quality labeling services for AI/ML models. From image tagging to NLP annotation, we ensure accuracy that improves your model performance.',
-      stats: '40% boost in AI accuracy'
+      stats: '99%+ labeling accuracy'
     },
 
     {
-      icon: '⚡',
-      title: 'Cloud Infrastructure & DevOps',
-      desc: 'Deploy faster, scale globally, and achieve enterprise-grade reliability. We automate cloud operations, CI/CD pipelines, and monitoring systems for zero downtime.',
-      stats: '99.99% uptime achieved'
+      icon: '📈',
+      title: 'Digital Marketing & Growth',
+      desc: 'Execute data-driven marketing strategies that amplify brand awareness and drive measurable business growth. We combine paid ads, SEO, and conversion optimization to deliver sustained results.',
+      stats: '172% increase in conversions'
     },
 
     {
@@ -34,14 +34,14 @@ const Industries = () => {
       icon: '🎨',
       title: 'UI & UX',
       desc: 'Design intuitive, modern interfaces that enhance user experience. We turn complex workflows into simple, beautiful user journeys.',
-      stats: '60% improvement in user satisfaction'
+      stats: '85% improvement in user satisfaction'
     },
 
     {
       icon: '🗄️',
       title: 'API & Database Services',
       desc: 'Secure, scalable APIs and data systems for your business applications. From backend design to optimization, we ensure speed and reliability.',
-      stats: '50% faster data operations'
+      stats: '80% faster data operations'
     }
   ];
 
@@ -50,7 +50,8 @@ const Industries = () => {
       <div className="container">
         <div className="kicker">Industries</div>
         <h2 className="section-title">Built for Every Industry</h2>
-        <p className="section-sub">Tailored services designed to elevate your workflow and business growth.</p>
+        <p className="section-sub">We design every service to remove complexity and elevate your workflow.
+Scale effortlessly with seamless tools, automation, and modern engineering.</p>
 
         <div className="industries-grid">
           {items.map((it, i) => (

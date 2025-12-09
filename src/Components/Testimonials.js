@@ -5,16 +5,9 @@ const Testimonials = () => {
     {
       stars: "★★★★★",
       quote: "Eleven11 helped us automate 70% of our manual tasks. Our team can now focus on growth instead of repetitive work.",
-      author: "Rahul Sharma",
-      role: "Founder, TechNova",
+      author: "Rahul",
+      role: "Development Manager, TechNova",
       avatar: "R"
-    },
-    {
-      stars: "★★★★★",
-      quote: "The quality and delivery speed were impressive. Their UI/UX work improved our product engagement significantly.",
-      author: "Priya N",
-      role: "Product Manager, CloudBase",
-      avatar: "P"
     },
     {
       stars: "★★★★★",
@@ -22,6 +15,13 @@ const Testimonials = () => {
       author: "Vignesh K",
       role: "CTO, NeoStack",
       avatar: "V"
+    },
+    {
+      stars: "★★★★★",
+      quote: "The quality and delivery speed were impressive. Their UI/UX work improved our product engagement significantly.",
+      author: "Priya N",
+      role: "Product Manager, TechGT",
+      avatar: "P"
     }
   ];
 

@@ -384,14 +384,14 @@ a {
   background: #e6eef8;
 }
 
-/* ============================
-   📊 RIGHT SIDE CARD
-   ============================ */
+/* ===========================
+   📹 HERO RIGHT VIDEO CARD
+   =========================== */
 .hero-right {
   position: relative;
 }
 
-/* Shadow Behind Card */
+/* Card shadow behind */
 .card-shadow {
   position: absolute;
   inset: 16px;
@@ -404,78 +404,32 @@ a {
   filter: blur(.4px);
 }
 
-/* Main Card */
-.revenue-card {
+/* Main video card */
+.revenue-card.video-card {
   position: relative;
   background: #fff;
   border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 14px 32px rgba(2,6,23,0.08);
+  overflow: hidden;
+  padding: 0;               /* remove padding for video */
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.08);
   z-index: 2;
   animation: fadeUp .7s ease .32s both;
 }
 
-/* Card Header */
-.rev-header {
+/* The video */
+.hero-video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;        /* full clean video fit */
+  border-radius: 16px 16px 0 0;
+}
+
+/* Stats bottom area */
+.rev-stats {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.rev-small {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.rev-big {
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.rev-badge {
-  background: #e7ffef;
-  color: #007441;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  animation: pulse 2.2s infinite;
-}
-
-/* Bar Chart Animation */
-.bar-chart {
-  display: flex;
-  gap: 10px;
-  align-items: flex-end;
-  height: 160px;
-  margin: 22px 0;
-}
-
-.bar {
-  flex: 1;
-  height: 100%;
-  background: var(--primary);
-  border-radius: 8px;
-
-  transform-origin: bottom;
-  transform: scaleY(0);
-  animation: barGrow .9s cubic-bezier(.2,.8,.2,1) forwards;
-}
-
-.bar:nth-child(1){animation-delay:.05s}
-.bar:nth-child(2){animation-delay:.12s}
-.bar:nth-child(3){animation-delay:.18s}
-.bar:nth-child(4){animation-delay:.24s}
-.bar:nth-child(5){animation-delay:.30s}
-.bar:nth-child(6){animation-delay:.36s}
-.bar:nth-child(7){animation-delay:.42s}
-.bar:nth-child(8){animation-delay:.48s}
-
-/* Stats */
-.rev-stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 12px;
+  padding: 14px 18px;
+  background: #fff;
 }
 
 .stat-label {
@@ -485,49 +439,96 @@ a {
 
 .stat-value {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
 }
+
 
 /* ============================
    📱 RESPONSIVE HERO
    ============================ */
-@media(max-width:880px) {
+/* ===========================
+   📱 Tablet Layout (880px ↓)
+   =========================== */
+@media(max-width: 880px) {
 
   .hero-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Full width */
     text-align: center;
   }
 
-  .hero-copy {
-    margin: 0 auto;
+  .hero-right {
+    margin-top: 28px;
   }
 
-  .metrics {
-    justify-content: center;
+  .card-shadow {
+    inset: 12px;
+    right: -10px;
+    border-radius: 14px;
+    transform: rotate(2deg);
+  }
+
+  .revenue-card.video-card {
+    border-radius: 14px;
+  }
+
+  .hero-video {
+    height: 260px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .rev-stats {
+    padding: 12px 14px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+}
+
+
+/* ===========================
+   📱 Mobile Layout (600px ↓)
+   =========================== */
+@media(max-width: 600px) {
+
+  .hero-container {
+    padding: 20px 18px;
   }
 
   .hero-right {
-    margin-top: 30px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .revenue-card.video-card {
+    border-radius: 12px;
+  }
+
+  .hero-video {
+    height: 200px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card-shadow {
+    inset: 10px;
+    right: -6px;
+    border-radius: 12px;
+    transform: rotate(1deg);
+  }
+
+  .rev-stats {
+    padding: 10px 12px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 14px;
   }
 }
 
-@media(max-width:600px) {
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .hero-copy {
-    font-size: 15px;
-  }
-
-  .bar-chart {
-    height: 120px;
-  }
-
-  .revenue-card {
-    padding: 18px;
-  }
-}
 
 /* ============================
    🎬 ANIMATIONS
