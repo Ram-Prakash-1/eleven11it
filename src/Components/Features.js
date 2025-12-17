@@ -43,7 +43,21 @@ const Features = () => {
 Scale faster with clean architecture, intelligent tools, and seamless integrations.
 </p>
 
-        <div className="features-grid">
+        <div className="icon-row">
+          {list.map((f, i) => (
+            <div key={i} className="icon-item">
+              <div className="icon-circle">{f.icon}</div>
+
+              {/* Popup */}
+              <div className="icon-popup">
+                <h4>{f.title}</h4>
+                <p>{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* <div className="features-grid">
           {list.map((f, i) => (
             <article key={i} className="feature-card">
               <div className="feature-icon">{f.icon}</div>
@@ -51,16 +65,16 @@ Scale faster with clean architecture, intelligent tools, and seamless integratio
               <p>{f.desc}</p>
             </article>
           ))}
-        </div>
+        </div> */}
 
-        <div className="cta-band">
+        {/* <div className="cta-band">
           <h3>And That’s Just the Beginning</h3>
           <p>
             Explore advanced APIs, custom integrations, automation suites, white-label services,
             and enterprise-level support tailored for your business.
           </p>
           <button className="btn-explore">Explore All Features</button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

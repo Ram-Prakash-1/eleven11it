@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import eleven11_with_background from "../Images/Eleven11_background.png";
 import eleven11_video from "../Videos/Eleven11video.mp4";
 
 const Hero = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef(null);
 
-  // 📌 Scroll Spy
+  /* =========================
+     📌 Scroll Spy
+     ========================= */
   useEffect(() => {
     const sections = document.querySelectorAll("section, header, footer");
     const navLinks = document.querySelectorAll(".nav-links a");
@@ -33,23 +36,41 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", activateScrollSpy);
   }, []);
 
-  // ⭐ WhatsApp handler
+  /* =========================
+     📱 Close menu on outside click
+     ========================= */
+  useEffect(() => {
+    function handleOutsideClick(e) {
+      if (
+        mobileOpen &&
+        navRef.current &&
+        !navRef.current.contains(e.target)
+      ) {
+        setMobileOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [mobileOpen]);
+
+  /* =========================
+     ⭐ WhatsApp Handler
+     ========================= */
   function openWhatsApp() {
-    const phone = "918807252105"; // 🔥 YOUR NUMBER
+    const phone = "918807252105";
     const message =
       "Hello! I have a requirement for my business and would like to connect with Eleven11 IT Solutions. Can we schedule a call?";
-    
+
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }
 
   return (
     <header className="hero-root" id="home">
-
-      {/* NAVBAR */}
-      <nav className="nav">
+      {/* ================= NAVBAR ================= */}
+      <nav className="nav" ref={navRef}>
         <div className="nav-inner">
-
           {/* LOGO */}
           <div className="brand">
             <div className="brand-logo">
@@ -58,37 +79,54 @@ const Hero = () => {
             <div className="brand-name">Eleven11</div>
           </div>
 
-          {/* MOBILE MENU */}
+          {/* MOBILE TOGGLE */}
           <button
             className="nav-toggle"
             aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((v) => !v)}
+            onClick={() => setMobileOpen((prev) => !prev)}
           >
             ☰
           </button>
 
           {/* LINKS */}
           <ul className={`nav-links ${mobileOpen ? "open" : ""}`}>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#value-prop">Services</a></li>
-            <li><a href="#features">Why Us</a></li>
-            <li><a href="#industries">Made By Us</a></li>
-            <li><a href="#footer">Contact</a></li>
+            <li>
+              <a href="#home" onClick={() => setMobileOpen(false)}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#value-prop" onClick={() => setMobileOpen(false)}>
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#features" onClick={() => setMobileOpen(false)}>
+                Why Us
+              </a>
+            </li>
+            <li>
+              <a href="#industries" onClick={() => setMobileOpen(false)}>
+                Made By Us
+              </a>
+            </li>
+            <li>
+              <a href="#footer" onClick={() => setMobileOpen(false)}>
+                Contact
+              </a>
+            </li>
           </ul>
-
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* ================= HERO ================= */}
       <div className="hero-container">
-
-        {/* LEFT CONTENT */}
+        {/* LEFT */}
         <div className="hero-left">
-
           <span className="pill">• Startup Launch Partner</span>
 
           <h1 className="hero-title">
-            We Build Startups<br />That Scale.
+            We Build Startups <br /> That Scale.
           </h1>
 
           <p className="hero-copy">
@@ -102,9 +140,9 @@ const Hero = () => {
               Schedule a Call →
             </button>
 
-            <button className="btn-primary large">
+            {/* <button className="btn-primary large">
               View Portfolio →
-            </button>
+            </button> */}
           </div>
 
           <div className="metrics">
@@ -122,13 +160,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT CARD */}
+        {/* RIGHT */}
         <div className="hero-right">
-
           <div className="card-shadow" />
 
           <div className="revenue-card video-card">
-
             <video
               className="hero-video"
               src={eleven11_video}
@@ -152,13 +188,9 @@ const Hero = () => {
                 <div className="stat-value">2.4×</div>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </header>
   );
 };

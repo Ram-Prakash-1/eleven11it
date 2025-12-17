@@ -106,7 +106,16 @@ const Footer = () => {
         <div className="footer-col">
           <h5>Product</h5>
           <ul>
-            <li>Features</li>
+            <li>
+              <a href="#features"
+              style={{
+               textDecoration: "none",
+               color: "inherit",
+               cursor: "pointer"
+              }}>
+                Features
+              </a>
+            </li>
             <li>Projects</li>
           </ul>
         </div>
@@ -115,9 +124,19 @@ const Footer = () => {
         <div className="footer-col">
           <h5>Company</h5>
           <ul>
-            <li>About Us</li>
+            <li>
+              <a href="#home"
+               style={{
+               textDecoration: "none",
+               color: "inherit",
+               cursor: "pointer"
+              }}>
+               About Us
+              </a>
+
+            </li>
             <li>Careers</li>
-            <li>Portfolio</li>
+            {/* <li>Portfolio</li> */}
           </ul>
         </div>
 
