@@ -68,7 +68,7 @@ const Footer = () => {
 
           <div className="socials">
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/eleven11-it-solutions"
               className="social"
               target="_blank"
               rel="noopener noreferrer"
@@ -92,7 +92,7 @@ const Footer = () => {
               YouTube
             </a>
             <a
-              href="https://instagram.com/"
+              href="https://www.instagram.com/eleven11_it_solutions?igsh=bXR3MWp2aXJ2ZjBl"
               className="social"
               target="_blank"
               rel="noopener noreferrer"
