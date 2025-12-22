@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import eleven11_with_background from "../Images/Eleven11_background.png";
+import { Link } from "react-router-dom";
+
 
 // ---- PUT YOUR REAL IDs HERE ----
 const SERVICE_ID = "service_Eleven11x121";     // 👈 EmailJS service ID
@@ -116,6 +118,10 @@ const Footer = () => {
                 Features
               </a>
             </li>
+            {/* <li><Link to="/projects" className="footer-link">
+                  Projects
+                </Link>
+            </li> */}
             <li>Projects</li>
           </ul>
         </div>
